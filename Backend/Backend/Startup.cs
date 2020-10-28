@@ -2,7 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Backend.Domain.IRepositories;
+using Backend.Domain.IServices;
 using Backend.Persistence.Context;
+using Backend.Persistence.Repositories;
+using Backend.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +33,19 @@ namespace Backend
             //Importar la conexion hacia la base de datos
             services.AddDbContext<AplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("ConnectionQuestions")));
+
+            //Para poder usar el user repository
+            services.AddScoped<IUsuarioRespository, UsuarioRepository>();
+
+            //Para poder utilizar los servicios
+            services.AddScoped<IUsuarioService, UsuarioService>();
+
+            //Agregamos los siguientes servicios para la conexion de un usuario LOGIN
+            services.AddScoped<ILoginService, LoginService>();
+
+            //Agregamos el siguiente servicio para poder manejar la informacion en el Repository
+            services.AddScoped<ILoginRepository, LoginRepository>();
+
             services.AddControllers();
         }
 

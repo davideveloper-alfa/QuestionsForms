@@ -1,0 +1,50 @@
+﻿En usuario services solo se va a tener la logica del negocio para el tema del usuario
+
+carpeta Repositories
+
+controller se comunica con services y services con persistencia pero se utilizaran interfaces
+
+Domain, carpeta interface IRepositories, aqui iran todas las interfaces de 
+
+
+1. Crear Metodo POST en Usuario controller 
+2. Definir y crear metodo SaveUser en la interfaz IUsuarioService
+3. Implementar metodo SaveUser en el UsuarioService
+4. Definir y crear metodo SaveUser en la interfaz IUsuarioRepository
+5. Implementar metodo SaveUser en UsuarioRepository
+
+- En Service se implementa toda la lógica de negocio
+
+-------------------------------------------------------
+Proceso de logica para cambiar password en el backend
+
+1. Crear Endpoint / Controller
+
+Pasos para poder validar la constraseñas antes de cambiarla
+	1.2 Crear Interfaz ValidatePassword en la interfaz de servicios IUsuarioService
+	1.3 Implementar metodo ValidatePassword en UsuarioService
+	1.4 Crear metodo ValidatePassword en la interfaz de repositorio IUsuarioRepository
+	1.5 Implementar metodo ValidatePassword en UsuarioRepository
+
+2. Validara contraseñas
+3. Actualizar contraseñas
+
+-----------------------------------------------------
+Login
+
+1. crear controller login
+2. crear interfaz login services
+3. crear clase loginServices que implemente la interfaz login
+4. crear interfaz de repository para el login
+5. crear clase loginRepository que implementa la interfaz repository
+6. agrear servicios generados al contenedor Startup
+
+-------------------------------------
+Login services
+
+1. Crear Endpoint en controller
+2. definir metodo validateUser en la interfaz de servicios login
+3. implementar metodo validateUser en la LoginService
+4. definir metodo validateUser en la interfa de repoistorios
+5. implementar metodo en loginRepository
+
