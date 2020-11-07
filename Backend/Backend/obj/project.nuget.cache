@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fnSpZjm03odsScOvJvhN4Uuo+M12ydr1zRsuL/BZtvBX6H7zWjcmUm8t8OxbZs3DgZG6ugKZqaalgM/gmaqEjA==",
+  "dgSpecHash": "x3Sik990PVwU7+kueasNCoLML/G0T9xVdPIFR8tdlpzt2RDZfX7mQ0pjqoI1Jp62a+qWD9NxREKNiYxpuY3Avg==",
   "success": true,
   "projectFilePath": "D:\\GitHub_Kraken\\QuestionsForms\\Backend\\Backend\\Backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\David Zambrano\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.9\\microsoft.aspnetcore.authentication.jwtbearer.3.1.9.nupkg.sha512",
     "C:\\Users\\David Zambrano\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\David Zambrano\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\David Zambrano\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

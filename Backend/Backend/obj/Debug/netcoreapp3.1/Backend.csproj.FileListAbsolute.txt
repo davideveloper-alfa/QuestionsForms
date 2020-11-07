@@ -57,5 +57,6 @@ D:\GitHub_Kraken\QuestionsForms\Backend\Backend\bin\Debug\netcoreapp3.1\runtimes
 D:\GitHub_Kraken\QuestionsForms\Backend\Backend\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\GitHub_Kraken\QuestionsForms\Backend\Backend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\GitHub_Kraken\QuestionsForms\Backend\Backend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\GitHub_Kraken\QuestionsForms\Backend\Backend\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\GitHub_Kraken\QuestionsForms\Backend\Backend\obj\Debug\netcoreapp3.1\Backend.csproj.CoreCompileInputs.cache
 D:\GitHub_Kraken\QuestionsForms\Backend\Backend\obj\Debug\netcoreapp3.1\Backend.MvcApplicationPartsAssemblyInfo.cache

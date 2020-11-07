@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Backend.Domain.IServices;
 using Backend.Domain.Models;
 using Backend.DTO;
 using Backend.Utils;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -52,12 +55,18 @@ namespace Backend.Controllers
         }
 
         [Route("CambiarPassword")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] //con esta linea le indicamos que requiere token para usar
         [HttpPut]
         public async Task<IActionResult> CambiarPassword([FromBody] CambiarPasswordDTO cambiarPassword)
         {
             try
             {
-                int idUsuario = 3;
+                //Para obtener los claims del token
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+
+                //aqui obtenemos el token identity, es decir, id del usuario
+                var idUsuario = JwtConfigurator.GetTokenIdUsuario(identity);
+
                 //requerimos incialmente encriptar el password anterior para hacer una validacion
                 //entre la password registrada anteriormente
                 string passwordEncriptado = Encriptar.EncriptarPassword(cambiarPassword.PasswordAnterior);

@@ -7,6 +7,7 @@ using Backend.Domain.Models;
 using Backend.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace Backend.Controllers
 {
@@ -14,11 +15,15 @@ namespace Backend.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        //JWT Configurations
+        private readonly IConfiguration _configuration;
+
         //Inyeccion de dependencias de los servicios que se conectan al repositry
         private readonly ILoginService _loginService;
-        public LoginController(ILoginService loginService)
+        public LoginController(ILoginService loginService, IConfiguration configuration)
         {
             _loginService = loginService;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -38,7 +43,8 @@ namespace Backend.Controllers
                 }
                 else
                 {
-                    return Ok(new { message = usuario.UserName });
+                    string tokenString = JwtConfigurator.GetToken(user, _configuration);
+                    return Ok(new { token = tokenString });
                 }
             }
             catch (Exception ex)
