@@ -49,6 +49,10 @@ namespace Backend
             //Agregamos el siguiente servicio para poder manejar la informacion en el Repository
             services.AddScoped<ILoginRepository, LoginRepository>();
 
+            //Agregamos el servicio de cuestionario
+            services.AddScoped<ICuestionarioService, CuestionarioService>();
+            services.AddScoped<ICuestionarioRepository, CuestionarioRepository>();
+
             //cors
             //permite conectarse a cualquier app / front end
             services.AddCors(options => options.AddPolicy("AllowWebApp",
@@ -73,7 +77,8 @@ namespace Backend
                                        });
 
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                                      options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
